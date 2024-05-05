@@ -1,0 +1,17 @@
+//- INDENTATION IS VERY IMPORTANT IN PUG
+
+//- will be a conitnuation of the main-layout page
+extends layouts/main-layout.pug
+
+//- blocks are used render your code into(advantage of using a template)
+//- this derives its content from the block content form main-layout
+//- any page that extends under the template file needs to use blocks to render content
+block content
+    //- calling it form the mixins page    
+    +createPostForm(userLoggedIn) 
+    .postsContainer
+
+    +createPostModals(userLoggedIn)
+//-linking to the home.js 
+block scripts
+    script(src="/js/home.js")
